@@ -2,7 +2,7 @@
 
 **Automation & Commissioning Engineer** — packaging machinery, Italy.
 
-I write the software that runs automatic packaging machines, and then I go on site and prove it works. Four years across roughly 24 PLC projects on five control platforms, with commissioning and customer acceptance testing in **7 countries across Europe and North America**.
+I write the software that runs automatic packaging machines, and then I go on site and prove it works. Four years across roughly 24 PLC projects on Siemens, Omron and Rockwell platforms, with commissioning and customer acceptance testing in **7 countries across Europe and North America**.
 
 Most of what I build lives behind an NDA, so this profile is mostly private repositories. What follows is what I work on.
 
