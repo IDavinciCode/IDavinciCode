@@ -35,11 +35,7 @@ Built with Python, SQL Server and SQLite, OPC UA, JavaScript, and a Tauri deskto
 
 Honest about the limits: single developer, tests run locally with no CI, packaged as a desktop app rather than published, partial type hints.
 
----
 
-### Why it matters
-
-I work in an environment with no formal software standards and no code review. Conventions travel by word of mouth and by copying from similar machines. Ð-Unit is the answer to that: the tooling that makes verifiable what would otherwise depend on who remembers what.
 
 ---
 
