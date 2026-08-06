@@ -49,6 +49,6 @@ Six chapters done. Work in progress.
 
 ---
 
-📍 Faenza, Italy · 🇮🇹 🇧🇷 Italian and Portuguese native · Available for international travel
+📍 Faenza, Italy · 🇮🇹 🇧🇷 Italian and Portuguese native
 
 [LinkedIn](https://www.linkedin.com/in/igordavinci)
