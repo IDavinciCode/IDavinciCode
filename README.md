@@ -1,4 +1,7 @@
-<img src="banner.svg" alt="Igor Davinci, Automation and Commissioning Engineer" width="100%">
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset="banner-light.svg">
+  <img src="banner.svg" alt="Igor Davinci, Automation and Commissioning Engineer" width="100%">
+</picture>
 
 
 **Automation & Commissioning Engineer**, packaging machinery, Italy.
@@ -47,6 +50,13 @@ A field manual for people entering industrial automation, in Italian. Seventeen 
 The rule I set for myself: if a junior uses it with their eyes and hands on the machine, it goes in the book. If it only serves whoever designs or calculates, it gets named and referenced.
 
 Six chapters done. Work in progress.
+
+---
+
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/IDavinciCode/IDavinciCode/output/snake-light.svg">
+  <img src="https://raw.githubusercontent.com/IDavinciCode/IDavinciCode/output/snake.svg" alt="Contribution calendar eaten by a snake" width="100%">
+</picture>
 
 ---
 

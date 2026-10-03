@@ -1,8 +1,8 @@
 // Author: Igor Davinci
-// Version: 0.4.0
+// Version: 0.5.0
 // GitHub profile banner. Reads the owner's repositories (name, language,
 // last push: metadata only, never contents) and draws a terminal.
-// Usage: GH_TOKEN=... node scripts/make-banner.js banner.svg
+// Usage: GH_TOKEN=... node scripts/make-banner.js  (writes banner.svg and banner-light.svg)
 const fs = require('fs');
 
 const OWNER = 'IDavinciCode';
@@ -12,7 +12,12 @@ const MAX = 10;
 // not the project, the owner's word wins
 const LANG = { 'death-arena': 'C++' };
 
-const C = { bg: '#07090a', bar: '#0c1012', line: '#1c2a2e', dim: '#56686d', text: '#d6e2e5', cyan: '#78BECD' };
+const THEMES = {
+  dark: { bg: '#07090a', bar: '#0c1012', line: '#1c2a2e', dim: '#56686d', text: '#d6e2e5', cyan: '#78BECD', ghost: '#ffffff', scan: '.35', band: '.035' },
+  // the cyan darkened until it reads on paper: #78BECD on white is about 2:1
+  light: { bg: '#f3f5f5', bar: '#e6ebec', line: '#c4d0d3', dim: '#5b6a6e', text: '#121718', cyan: '#1d6878', ghost: '#121718', scan: '.045', band: '.05' },
+};
+let C = THEMES.dark;
 const MONO = "'IBM Plex Mono', 'JetBrains Mono', ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', monospace";
 const CW = 9.05;
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -45,13 +50,14 @@ function typed(x, y, prompt, cmd, t0, dur) {
 const line = (x, y, t0, inner) => `<text x="${x}" y="${y}" opacity="0" style="animation:show 0s ${t0}s forwards">${inner}</text>`;
 const kv = (k, v) => `<tspan fill="${C.dim}">${k.padEnd(8)}</tspan><tspan fill="${C.text}">${esc(v)}</tspan>`;
 
-function draw(list, today) {
+function draw(list, today, theme) {
+  C = THEMES[theme]; css = ''; n = 0;
   const P = 'igor@d-unit:~$ ', L = 36;
   // left: who, and the stack, all from the README
   let left = typed(L, 76, P, 'whoami', 0.4, 0.45);
   left += `<g opacity="0" style="animation:show 0s 1s forwards" font-size="60" font-weight="700" letter-spacing="2">
   <text class="g1" x="${L - 2}" y="142" fill="${C.cyan}" opacity="0">IGOR DAVINCI</text>
-  <text class="g2" x="${L + 2}" y="142" fill="#ffffff" opacity="0">IGOR DAVINCI</text>
+  <text class="g2" x="${L + 2}" y="142" fill="${C.ghost}" opacity="0">IGOR DAVINCI</text>
   <text x="${L}" y="142" fill="${C.text}">IGOR DAVINCI</text></g>`;
   left += typed(L, 174, '// ', 'automation & commissioning engineer · packaging machinery · italy', 1.4, 1.1);
   left += typed(L, 216, P, 'cat stack.txt', 2.7, 0.6);
@@ -108,7 +114,7 @@ function draw(list, today) {
   @keyframes scan{from{transform:translateY(-40px)}to{transform:translateY(440px)}}
   @media (prefers-reduced-motion:reduce){*{animation:none!important}[opacity="0"]{opacity:1}.g1,.g2{opacity:0}rect[class^="k"]{display:none}}
 </style>
-<defs><pattern id="lines" width="4" height="3" patternUnits="userSpaceOnUse"><rect width="4" height="1" fill="#000" opacity=".35"/></pattern></defs>
+<defs><pattern id="lines" width="4" height="3" patternUnits="userSpaceOnUse"><rect width="4" height="1" fill="#000" opacity="${C.scan}"/></pattern></defs>
 <rect width="1280" height="420" fill="${C.bg}"/>
 <rect width="1280" height="34" fill="${C.bar}"/>
 <path d="M0 34.5H1280" stroke="${C.line}"/>
@@ -117,7 +123,7 @@ function draw(list, today) {
 ${left}
 ${right}
 <rect width="1280" height="420" fill="url(#lines)"/>
-<rect class="scan" width="1280" height="30" fill="${C.cyan}" opacity=".035"/>
+<rect class="scan" width="1280" height="30" fill="${C.cyan}" opacity="${C.band}"/>
 </svg>
 `;
 }
@@ -127,7 +133,8 @@ ${right}
   // a token that cannot see the private repositories returns an empty list:
   // fail the run and keep the last good picture rather than publish nothing
   if (list.length === 0) throw new Error('no repositories visible to the token; banner left unchanged');
-  const svg = draw(list, new Date().toISOString().slice(0, 10));
-  fs.writeFileSync(process.argv[2] || 'banner.svg', svg);
+  const today = new Date().toISOString().slice(0, 10);
+  fs.writeFileSync('banner.svg', draw(list, today, 'dark'));
+  fs.writeFileSync('banner-light.svg', draw(list, today, 'light'));
   console.log(list.map((r) => `${r.private ? 'priv' : 'pub '} ${r.name} ${r.lang} ${r.pushed}`).join('\n'));
 })().catch((e) => { console.error(e.message); process.exit(1); });

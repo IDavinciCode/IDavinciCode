@@ -1,5 +1,5 @@
 # Author: Igor Davinci
-# Version: 1.0.0
+# Version: 1.1.0
 # Redraws banner.svg every night from the repositories' metadata
 # (name, language, last push). Commits only when the picture changed.
 name: banner
@@ -23,12 +23,12 @@ jobs:
       - name: Draw
         env:
           GH_TOKEN: ${{ secrets.BANNER_TOKEN }}
-        run: node scripts/make-banner.js banner.svg
+        run: node scripts/make-banner.js
       - name: Commit if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898299+github-actions[bot]@users.noreply.github.com"
-          git add banner.svg
+          git add banner.svg banner-light.svg
           if ! git diff --cached --quiet; then
             git commit -m "chore(banner): redraw from repository metadata"
             git push
