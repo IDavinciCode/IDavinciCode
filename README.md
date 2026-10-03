@@ -1,3 +1,5 @@
+<img src="banner.svg" alt="Igor Davinci, Automation and Commissioning Engineer" width="100%">
+
 # Igor Davinci
 
 **Automation & Commissioning Engineer**, packaging machinery, Italy.
