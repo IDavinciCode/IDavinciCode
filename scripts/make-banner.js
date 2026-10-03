@@ -1,5 +1,5 @@
 // Author: Igor Davinci
-// Version: 0.5.0
+// Version: 0.5.1
 // GitHub profile banner. Reads the owner's repositories (name, language,
 // last push: metadata only, never contents) and draws a terminal.
 // Usage: GH_TOKEN=... node scripts/make-banner.js  (writes banner.svg and banner-light.svg)
@@ -10,7 +10,7 @@ const SKIP = new Set([OWNER]); // the profile repo itself
 const MAX = 10;
 // GitHub picks the language with the most bytes; where that is tooling and
 // not the project, the owner's word wins
-const LANG = { 'death-arena': 'C++' };
+const LANG = { 'Metal-Circus-Show': 'C++' };
 
 const THEMES = {
   dark: { bg: '#07090a', bar: '#0c1012', line: '#1c2a2e', dim: '#56686d', text: '#d6e2e5', cyan: '#78BECD', ghost: '#ffffff', scan: '.35', band: '.035' },
