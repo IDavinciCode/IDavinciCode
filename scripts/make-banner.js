@@ -1,5 +1,5 @@
 // Author: Igor Davinci
-// Version: 0.3.1
+// Version: 0.4.0
 // GitHub profile banner. Reads the owner's repositories (name, language,
 // last push: metadata only, never contents) and draws a terminal.
 // Usage: GH_TOKEN=... node scripts/make-banner.js banner.svg
@@ -8,6 +8,9 @@ const fs = require('fs');
 const OWNER = 'IDavinciCode';
 const SKIP = new Set([OWNER]); // the profile repo itself
 const MAX = 10;
+// GitHub picks the language with the most bytes; where that is tooling and
+// not the project, the owner's word wins
+const LANG = { 'death-arena': 'C++' };
 
 const C = { bg: '#07090a', bar: '#0c1012', line: '#1c2a2e', dim: '#56686d', text: '#d6e2e5', cyan: '#78BECD' };
 const MONO = "'IBM Plex Mono', 'JetBrains Mono', ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', monospace";
@@ -28,7 +31,7 @@ async function repos() {
   return out
     .filter((r) => !SKIP.has(r.name) && !r.fork && !r.archived && r.size > 0)
     .sort((a, b) => b.pushed_at.localeCompare(a.pushed_at))
-    .map((r) => ({ name: r.name, private: r.private, lang: r.language || 'n/a', pushed: r.pushed_at.slice(0, 10) }));
+    .map((r) => ({ name: r.name, private: r.private, lang: LANG[r.name] || r.language || 'n/a', pushed: r.pushed_at.slice(0, 10) }));
 }
 
 let css = '', n = 0;
