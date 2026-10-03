@@ -1,5 +1,5 @@
 // Author: Igor Davinci
-// Version: 0.3.0
+// Version: 0.3.1
 // GitHub profile banner. Reads the owner's repositories (name, language,
 // last push: metadata only, never contents) and draws a terminal.
 // Usage: GH_TOKEN=... node scripts/make-banner.js banner.svg
@@ -121,6 +121,9 @@ ${right}
 
 (async () => {
   const list = await repos();
+  // a token that cannot see the private repositories returns an empty list:
+  // fail the run and keep the last good picture rather than publish nothing
+  if (list.length === 0) throw new Error('no repositories visible to the token; banner left unchanged');
   const svg = draw(list, new Date().toISOString().slice(0, 10));
   fs.writeFileSync(process.argv[2] || 'banner.svg', svg);
   console.log(list.map((r) => `${r.private ? 'priv' : 'pub '} ${r.name} ${r.lang} ${r.pushed}`).join('\n'));
