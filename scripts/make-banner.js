@@ -1,5 +1,5 @@
 // Author: Igor Davinci
-// Version: 0.5.1
+// Version: 0.6.0
 // GitHub profile banner. Reads the owner's repositories (name, language,
 // last push: metadata only, never contents) and draws a terminal.
 // Usage: GH_TOKEN=... node scripts/make-banner.js  (writes banner.svg and banner-light.svg)
@@ -9,7 +9,8 @@ const OWNER = 'IDavinciCode';
 const SKIP = new Set([OWNER]); // the profile repo itself
 const MAX = 10;
 // GitHub picks the language with the most bytes; where that is tooling and
-// not the project, the owner's word wins
+// not the project, the owner's word wins; a repo named here is listed even
+// while empty, so a recreated one does not drop out of the banner
 const LANG = { 'Metal-Circus-Show': 'C++' };
 
 const THEMES = {
@@ -34,7 +35,7 @@ async function repos() {
     if (batch.length < 100) break;
   }
   return out
-    .filter((r) => !SKIP.has(r.name) && !r.fork && !r.archived && r.size > 0)
+    .filter((r) => !SKIP.has(r.name) && !r.fork && !r.archived && (r.size > 0 || r.name in LANG))
     .sort((a, b) => b.pushed_at.localeCompare(a.pushed_at))
     .map((r) => ({ name: r.name, private: r.private, lang: LANG[r.name] || r.language || 'n/a', pushed: r.pushed_at.slice(0, 10) }));
 }
