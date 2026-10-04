@@ -1,5 +1,5 @@
 # Author: Igor Davinci
-# Version: 1.2.0
+# Version: 1.3.0
 # Redraws banner.svg every night from the repositories' metadata
 # (name, language, last push). Commits only when the picture changed.
 name: banner
@@ -12,9 +12,15 @@ on:
 permissions:
   contents: write
 
+# a manual run and the nightly one must not race to push
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+
 jobs:
   draw:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7

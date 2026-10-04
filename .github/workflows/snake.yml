@@ -1,5 +1,5 @@
 # Author: Igor Davinci
-# Version: 1.0.0
+# Version: 1.1.0
 # The contribution calendar eaten by a snake, in the banner's colours.
 # Platane/snk draws it; the two SVGs live on the `output` branch so the
 # nightly redraw never touches main's history.
@@ -13,9 +13,15 @@ on:
 permissions:
   contents: write
 
+# a manual run and the nightly one must not race to push
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+
 jobs:
   draw:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: Platane/snk@v3
         with:
