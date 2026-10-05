@@ -1,5 +1,5 @@
 // Author: Igor Davinci
-// Version: 0.6.0
+// Version: 0.7.0
 // GitHub profile banner. Reads the owner's repositories (name, language,
 // last push: metadata only, never contents) and draws a terminal.
 // Usage: GH_TOKEN=... node scripts/make-banner.js  (writes banner.svg and banner-light.svg)
@@ -138,4 +138,13 @@ ${right}
   fs.writeFileSync('banner.svg', draw(list, today, 'dark'));
   fs.writeFileSync('banner-light.svg', draw(list, today, 'light'));
   console.log(list.map((r) => `${r.private ? 'priv' : 'pub '} ${r.name} ${r.lang} ${r.pushed}`).join('\n'));
+  // on Actions, the rows drawn go to the run's summary page: what the banner
+  // shows can be read without opening the SVG
+  if (process.env.GITHUB_STEP_SUMMARY) {
+    const rows = list.slice(0, MAX).map((r) => `| ${r.name} | ${r.private ? 'private' : 'public'} | ${r.lang} | ${r.pushed} |`);
+    fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, [
+      `### Banner: ${list.length} repositories, ${list.length > MAX ? `first ${MAX} drawn` : 'all drawn'}`,
+      '', '| name | visibility | stack | last push |', '|---|---|---|---|', ...rows, '',
+    ].join('\n'));
+  }
 })().catch((e) => { console.error(e.message); process.exit(1); });
