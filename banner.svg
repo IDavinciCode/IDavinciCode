@@ -42,34 +42,34 @@
 <text x="1154" y="88" fill="#56686d" font-size="11" letter-spacing="1">LAST PUSH</text></g><g opacity="0" style="animation:show 0s 1.50s forwards" font-size="13">
 <rect x="828" y="107" width="8" height="8" fill="#78BECD" class="hot"/>
 <text x="844" y="116" fill="#56686d">priv</text>
-<text x="888" y="116" fill="#d6e2e5">IgorDavinci_Site</text>
-<text x="1058" y="116" fill="#78BECD">TypeScript</text>
+<text x="888" y="116" fill="#d6e2e5">SmartGhost</text>
+<text x="1058" y="116" fill="#78BECD">Python</text>
 <text x="1154" y="116" fill="#56686d">2026-10-08</text></g><g opacity="0" style="animation:show 0s 1.62s forwards" font-size="13">
 <rect x="828" y="133" width="8" height="8" fill="#78BECD" class="hot"/>
 <text x="844" y="142" fill="#56686d">priv</text>
-<text x="888" y="142" fill="#d6e2e5">Sito-B-Nis</text>
-<text x="1058" y="142" fill="#78BECD">Astro</text>
-<text x="1154" y="142" fill="#56686d">2026-10-04</text></g><g opacity="0" style="animation:show 0s 1.74s forwards" font-size="13">
+<text x="888" y="142" fill="#d6e2e5">IgorDavinci_Site</text>
+<text x="1058" y="142" fill="#78BECD">TypeScript</text>
+<text x="1154" y="142" fill="#56686d">2026-10-08</text></g><g opacity="0" style="animation:show 0s 1.74s forwards" font-size="13">
 <rect x="828" y="159" width="8" height="8" fill="#78BECD" class="hot"/>
 <text x="844" y="168" fill="#56686d">priv</text>
-<text x="888" y="168" fill="#d6e2e5">Metal-Circus-Show</text>
-<text x="1058" y="168" fill="#78BECD">C++</text>
+<text x="888" y="168" fill="#d6e2e5">Sito-B-Nis</text>
+<text x="1058" y="168" fill="#78BECD">Astro</text>
 <text x="1154" y="168" fill="#56686d">2026-10-04</text></g><g opacity="0" style="animation:show 0s 1.86s forwards" font-size="13">
-<rect x="828" y="185" width="8" height="8" fill="#78BECD" opacity=".45"/>
+<rect x="828" y="185" width="8" height="8" fill="#78BECD" class="hot"/>
 <text x="844" y="194" fill="#56686d">priv</text>
-<text x="888" y="194" fill="#d6e2e5">TucciFrucci-Quiz</text>
-<text x="1058" y="194" fill="#78BECD">JavaScript</text>
-<text x="1154" y="194" fill="#56686d">2026-09-27</text></g><g opacity="0" style="animation:show 0s 1.98s forwards" font-size="13">
+<text x="888" y="194" fill="#d6e2e5">Metal-Circus-Show</text>
+<text x="1058" y="194" fill="#78BECD">C++</text>
+<text x="1154" y="194" fill="#56686d">2026-10-04</text></g><g opacity="0" style="animation:show 0s 1.98s forwards" font-size="13">
 <rect x="828" y="211" width="8" height="8" fill="#78BECD" opacity=".45"/>
 <text x="844" y="220" fill="#56686d">priv</text>
-<text x="888" y="220" fill="#d6e2e5">DUnitSuite</text>
-<text x="1058" y="220" fill="#78BECD">Python</text>
-<text x="1154" y="220" fill="#56686d">2026-09-22</text></g><g opacity="0" style="animation:show 0s 2.10s forwards" font-size="13">
+<text x="888" y="220" fill="#d6e2e5">TucciFrucci-Quiz</text>
+<text x="1058" y="220" fill="#78BECD">JavaScript</text>
+<text x="1154" y="220" fill="#56686d">2026-09-27</text></g><g opacity="0" style="animation:show 0s 2.10s forwards" font-size="13">
 <rect x="828" y="237" width="8" height="8" fill="#78BECD" opacity=".45"/>
 <text x="844" y="246" fill="#56686d">priv</text>
-<text x="888" y="246" fill="#d6e2e5">SmartGhost</text>
-<text x="1058" y="246" fill="#78BECD">Python</text>
-<text x="1154" y="246" fill="#56686d">2026-09-21</text></g><g opacity="0" style="animation:show 0s 2.22s forwards" font-size="13">
+<text x="888" y="246" fill="#d6e2e5">DUnitSuite</text>
+<text x="1058" y="246" fill="#78BECD">Tauri</text>
+<text x="1154" y="246" fill="#56686d">2026-09-22</text></g><g opacity="0" style="animation:show 0s 2.22s forwards" font-size="13">
 <rect x="828" y="263" width="8" height="8" fill="none" stroke="#56686d"/>
 <text x="844" y="272" fill="#56686d">priv</text>
 <text x="888" y="272" fill="#d6e2e5">libro-automation-v1</text>
@@ -84,7 +84,7 @@
 <text x="844" y="324" fill="#56686d">priv</text>
 <text x="888" y="324" fill="#d6e2e5">PepeSite</text>
 <text x="1058" y="324" fill="#78BECD">Astro</text>
-<text x="1154" y="324" fill="#56686d">2026-04-29</text></g><text x="828" y="384" opacity="0" style="animation:show 0s 2.8s forwards"><tspan font-size="12" fill="#56686d">9 repos · 6 languages · last push 2026-10-08</tspan></text>
+<text x="1154" y="324" fill="#56686d">2026-04-29</text></g><text x="828" y="384" opacity="0" style="animation:show 0s 2.8s forwards"><tspan font-size="12" fill="#56686d">9 repos · 7 languages · last push 2026-10-08</tspan></text>
 <rect width="1280" height="420" fill="url(#lines)"/>
 <rect class="scan" width="1280" height="30" fill="#78BECD" opacity=".035"/>
 </svg>
