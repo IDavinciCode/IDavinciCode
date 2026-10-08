@@ -11,7 +11,7 @@ const MAX = 10;
 // GitHub picks the language with the most bytes; where that is tooling and
 // not the project, the owner's word wins; a repo named here is listed even
 // while empty, so a recreated one does not drop out of the banner
-const LANG = { 'Metal-Circus-Show': 'C++' };
+const LANG = { 'Metal-Circus-Show': 'C++', 'DUnitSuite': 'Tauri' };
 
 const THEMES = {
   dark: { bg: '#07090a', bar: '#0c1012', line: '#1c2a2e', dim: '#56686d', text: '#d6e2e5', cyan: '#78BECD', ghost: '#ffffff', scan: '.35', band: '.035' },
