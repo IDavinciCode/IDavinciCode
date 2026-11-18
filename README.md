@@ -12,6 +12,19 @@ Most of what I build lives behind an NDA, so this profile is mostly private repo
 
 ---
 
+### PLC Atlas · the map of industrial automation
+
+[plcatlas.com](https://plcatlas.com) is the reference site I write and build for people who work on machines: guides to decide, basics to learn, and demonstrations to try, on IEC and ISO standards.
+
+- **Guides and basics** on PLC programming, motion, machine safety, control panels, industrial networks and commissioning
+- **A PLC simulator and an HMI simulator** that run in the browser, with exercises
+- **Calculators** for the sums a panel builder and a commissioning engineer do by hand
+- **A weekly digest** of official advisories and standards, with the sources checked
+
+Free, no account, in six languages: Italian, English, German, Spanish, Portuguese, French.
+
+---
+
 ### On the machine
 
 - **Siemens S7-1500 / TIA Portal**: modular state-machine architectures, LAD and ST
