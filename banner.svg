@@ -80,7 +80,7 @@
 <text x="888" y="298" fill="#d6e2e5">libro-automation-v1</text>
 <text x="1058" y="298" fill="#78BECD">Python</text>
 <text x="1154" y="298" fill="#56686d">2026-10-24</text></g><g opacity="0" style="animation:show 0s 2.46s forwards" font-size="13">
-<rect x="828" y="315" width="8" height="8" fill="#78BECD" opacity=".45"/>
+<rect x="828" y="315" width="8" height="8" fill="none" stroke="#56686d"/>
 <text x="844" y="324" fill="#56686d">priv</text>
 <text x="888" y="324" fill="#d6e2e5">D-MyShell</text>
 <text x="1058" y="324" fill="#78BECD">Rust</text>
